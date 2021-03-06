@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="CityBankASP._Default" %>
+    CodeBehind="Default.aspx.cs" Inherits="CBLPG._Default" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 

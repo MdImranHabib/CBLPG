@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Declined.aspx.cs" Inherits="CityBankASP.Declined" ValidateRequest="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Declined.aspx.cs" Inherits="CBLPG.Declined" ValidateRequest="false" %>
 
-<%@ Import Namespace="CityBankASP" %>
+<%@ Import Namespace="CBLPG" %>
 <%@ Import Namespace="System.Xml" %>
 
 <html>

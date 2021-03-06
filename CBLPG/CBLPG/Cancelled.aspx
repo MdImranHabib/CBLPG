@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cancelled.aspx.cs" Inherits="CityBankASP.Cancelled" ValidateRequest="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cancelled.aspx.cs" Inherits="CBLPG.Cancelled" ValidateRequest="false" %>
 
-<%@ Import Namespace="CityBankASP" %>
+<%@ Import Namespace="CBLPG" %>
 <%@ Import Namespace="System.Xml" %>
 
 <html>

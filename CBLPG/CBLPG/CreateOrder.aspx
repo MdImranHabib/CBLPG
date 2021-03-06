@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateOrder.aspx.cs" Inherits="CityBankASP.CreateOrder" ValidateRequest="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateOrder.aspx.cs" Inherits="CBLPG.CreateOrder" ValidateRequest="false" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

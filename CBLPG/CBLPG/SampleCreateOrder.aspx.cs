@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 
-namespace CityBankASP
+namespace CBLPG
 {
     public partial class SampleCreateOrder : System.Web.UI.Page
     {
@@ -54,9 +54,9 @@ namespace CityBankASP
 
             string URL = resEcomList.items.url;
             string OrderID = resEcomList.items.orderId;
-            string SessionID = resEcomList.items.sessionId;
-                       
-            //Call for Payment Page
+            string SessionID = resEcomList.items.sessionId;           
+
+            //Call for Payment Page        
             if (OrderID != "" && SessionID != "")
             {
                 //Merchant have to store Created Order Details in Shop DB

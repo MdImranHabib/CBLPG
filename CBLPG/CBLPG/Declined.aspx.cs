@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CityBankASP
+namespace CBLPG
 {
     public partial class Declined : System.Web.UI.Page
     {

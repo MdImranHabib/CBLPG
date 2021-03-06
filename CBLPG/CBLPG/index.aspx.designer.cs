@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CityBankASP {
-    
-    
+namespace CBLPG
+{
+       
     public partial class index {
     }
 }

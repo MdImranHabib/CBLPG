@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using System.Text.RegularExpressions;
 
-namespace CityBankASP
+namespace CBLPG
 {
     public partial class Cancelled : System.Web.UI.Page
     {

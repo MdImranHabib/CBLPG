@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Approved.aspx.cs" Inherits="CityBankASP.Approved" ValidateRequest="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Approved.aspx.cs" Inherits="CBLPG.Approved" ValidateRequest="false" %>
 
-<%@ Import Namespace="CityBankASP" %>
+<%@ Import Namespace="CBLPG" %>
 <%@ Import Namespace="System.Xml" %>
 
 <html>
@@ -21,9 +21,9 @@
                 string OrderStatus = "";
                 string ApprovalCode = "";
                 string PAN = "";
-                
-                //var r = Request["xmlmsg"];
-              
+
+                var r = Request.Headers;
+
                 if (Request["xmlmsg"] != "")
                 {
                     try
@@ -44,30 +44,42 @@
 
                         if (OrderID == Session["OrderID"].ToString())
                         {
-                            String data = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-                            data += "<TKKPG>";
-                            data += "<Request>";
-                            data += "<Operation>GetOrderInformation</Operation>";
-                            data += "<Language>EN</Language>";
-                            data += "<Order>";
-                            data += "<Merchant>" + Session["Merchant"] + "</Merchant>";
-                            data += "<OrderID>" + Session["OrderID"] + "</OrderID>";
-                            data += "</Order>";
-                            data += "<SessionID>" + Session["SessionID"] + "</SessionID>";
-                            data += "<ShowParams>true</ShowParams>";
-                            data += "<ShowOperations>false</ShowOperations>";
-                            data += "<ClassicView>true</ClassicView>";
-                            data += "</Request></TKKPG> ";
+                            //var serviceUrlEcomm = "https://sandbox.thecitybank.com:7788/transaction/getorderdetailsapi";       
 
-                            String response = Functions.PostQW(data);
-                            XmlDocument xml = new XmlDocument();
-                            xml.LoadXml(response.Substring(response.IndexOf("<TKKPG>")));
+                            //var postdataEcomm = "{\"orderID\":\"" + OrderID + "\","
+                            //    + "\"sessionID\":\"" + SessionID + "\","
+                            //    + "\"merchantID\":\"" + Merchant + "\","
+                            //    + "\"userName\":\"test\","
+                            //    + "\"passWord\":\"123456Aa\","
+                            //    + "\"secureToken\":\"" + txnID + "\"}";
 
-                            //Extract additional parameters for verification
-                            XmlNodeList xmlNodes = xml.SelectNodes("/TKKPG/Response/Order/row/OrderParams/row");
-                            foreach (XmlNode node in xmlNodes)
-                                if (node.ChildNodes.Item(0).InnerText == "PAN")
-                                    PAN = node.ChildNodes.Item(1).InnerText;
+                            //var cblEcomm = Functions.ProcessRequest(certPath,postdataEcomm,serviceUrlEcomm,proxy,proxyauth);
+                            //dynamic cblEcommList = JsonConvert.DeserializeObject(cblEcomm);
+
+                            //String data = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+                            //data += "<TKKPG>";
+                            //data += "<Request>";
+                            //data += "<Operation>GetOrderInformation</Operation>";
+                            //data += "<Language>EN</Language>";
+                            //data += "<Order>";
+                            //data += "<Merchant>" + Session["Merchant"] + "</Merchant>";
+                            //data += "<OrderID>" + Session["OrderID"] + "</OrderID>";
+                            //data += "</Order>";
+                            //data += "<SessionID>" + Session["SessionID"] + "</SessionID>";
+                            //data += "<ShowParams>true</ShowParams>";
+                            //data += "<ShowOperations>false</ShowOperations>";
+                            //data += "<ClassicView>true</ClassicView>";
+                            //data += "</Request></TKKPG> ";
+
+                            //String response = Functions.PostQW(data);
+                            //XmlDocument xml = new XmlDocument();
+                            //xml.LoadXml(response.Substring(response.IndexOf("<TKKPG>")));
+
+                            ////Extract additional parameters for verification
+                            //XmlNodeList xmlNodes = xml.SelectNodes("/TKKPG/Response/Order/row/OrderParams/row");
+                            //foreach (XmlNode node in xmlNodes)
+                            //    if (node.ChildNodes.Item(0).InnerText == "PAN")
+                            //        PAN = node.ChildNodes.Item(1).InnerText;
                         }
                     }
                     catch (Exception ex)
@@ -79,49 +91,49 @@
                 
             
 	        <tr>					
-                <td align=left>Order ID </td>
-                <td align=left>=</td>
-                <td align=right><%= OrderID %></td>
-	        <tr>                
+                <td align="left">Order ID </td>
+                <td align="left">=</td>
+                <td align="right"><%= OrderID %></td>
+	        </tr>                
 	        <tr>					
-                <td align=left>Transaction Type </td>
-                <td align=left>=</td>
-                <td align=right><%= TransactionType %></td>
-	        <tr>
-	        <tr>					
-                <td align=left>Currency </td>
-                <td align=left>=</td>
-                <td align=right><%= Currency %></td>
+                <td align="left">Transaction Type </td>
+                <td align="left">=</td>
+                <td align="right"><%= TransactionType %></td>
 	        </tr>
 	        <tr>					
-                <td align=left>Purchase Amount </td>
-                <td align=left>=</td>
-                <td align=right><%= PurchaseAmount %></td>
+                <td align="left">Currency </td>
+                <td align="left">=</td>
+                <td align="right"><%= Currency %></td>
+	        </tr>
+	        <tr>					
+                <td align="left">Purchase Amount </td>
+                <td align="left">=</td>
+                <td align="right"><%= PurchaseAmount %></td>
 	        </tr>
             <tr>					
-                <td align=left>Response Code </td>
-                <td align=left>=</td>
-                <td align=right><%= ResponseCode%></td>
+                <td align="left">Response Code </td>
+                <td align="left">=</td>
+                <td align="right"><%= ResponseCode%></td>
 	        </tr>
             <tr>					
-                <td align=left>Order Status </td>
-                <td align=left>=</td>
-                <td align=right><%= OrderStatus %></td>
+                <td align="left">Order Status </td>
+                <td align="left">=</td>
+                <td align="right"><%= OrderStatus %></td>
 	        </tr>
             <tr>					
-                <td align=left>Approval Code </td>
-                <td align=left>=</td>
-                <td align=right><%= ApprovalCode%></td>
+                <td align="left">Approval Code </td>
+                <td align="left">=</td>
+                <td align="right"><%= ApprovalCode%></td>
 	        </tr>
             <tr>					
-                <td align=left>PAN </td>
-                <td align=left>=</td>
-                <td align=right><%= PAN%></td>
+                <td align="left">PAN </td>
+                <td align="left">=</td>
+                <td align="right"><%= PAN%></td>
 	        </tr>
             </table>	
 	
             <br/>
-        <input type="submit" value="Back to Create Order"/>
+            <input type="submit" value="Back to Create Order"/>
 	    </form>
 	    <hr/>
     </body>

@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="CityBankASP.index" ValidateRequest="false" %>--%>
+﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="CBLPG.index" ValidateRequest="false" %>--%>
 <html>
     <body>
 	    <h1>Test Merchant of CBLPG (ASP.NET C#)</h1>
