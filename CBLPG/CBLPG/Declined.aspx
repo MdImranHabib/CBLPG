@@ -31,7 +31,7 @@
                         TransactionType = nodeList.Item(0)["TransactionType"].InnerText;
                         Currency = nodeList.Item(0)["Currency"].InnerText;
                         PurchaseAmount = nodeList.Item(0)["PurchaseAmount"].InnerText;
-                        OrderStatus = nodeList.Item(0)["OrderStatus"].InnerText;
+                        OrderStatus = nodeList.Item(0)["OrderStatus"].InnerText;                      
                         
                         if (OrderID == Session["OrderID"].ToString())
                         {
